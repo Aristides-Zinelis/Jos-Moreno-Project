@@ -1,0 +1,26 @@
+galeria:
+    path:     /
+    defaults: { _controller: "ArisAdminBundle:Galeria:index" }
+
+galeria_new:
+    path:     /new
+    defaults: { _controller: "ArisAdminBundle:Galeria:new" }
+
+galeria_create:
+    path:     /create
+    defaults: { _controller: "ArisAdminBundle:Galeria:create" }
+    requirements: { _method: post }
+
+galeria_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "ArisAdminBundle:Galeria:edit" }
+
+galeria_update:
+    path:     /{id}/update
+    defaults: { _controller: "ArisAdminBundle:Galeria:update" }
+    requirements: { _method: post|put }
+
+galeria_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "ArisAdminBundle:Galeria:delete" }
+   

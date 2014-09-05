@@ -1,0 +1,65 @@
+.navbar-default{
+    background-color: transparent;
+    border-bottom-color: transparent;
+    border-left-color-ltr-source: physical;
+    border-left-color-rtl-source: physical;
+    border-left-color-value: transparent;
+    border-right-color-ltr-source: physical;
+    border-right-color-rtl-source: physical;
+    border-right-color-value: transparent;
+    border-top-color: transparent;
+}
+body {
+  background-color:#000000;
+ /* overflow: hidden; */
+  }
+.js div#preloader { position: fixed; left: 0; top: 0; z-index: 999; width: 100%; height: 100%; overflow: visible; background: #333 url('../images/design/loading.gif') no-repeat center center; }
+
+
+#anim1 {
+    
+    left: 40%;
+}
+
+#anim2{
+    left: 40%;
+    font-size: 4em;
+}
+
+#anim3{
+   left: 40%; 
+}
+
+
+
+@media (max-width: 768px) {
+
+body {
+    background-color:#000000;
+    padding-top:51px;
+ }
+    
+    
+.navbar-collapse{
+width:150px;
+}
+#anim1 {
+    left: 18%;
+}
+
+#anim2{
+    left: 18%;
+     font-size: 3em;
+}
+
+#anim3{
+   left: 18%; 
+}
+
+
+
+ 
+ }
+.navbar-nav.navbar-right:last-child {
+    margin-right: 45px;
+}

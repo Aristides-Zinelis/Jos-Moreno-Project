@@ -1,0 +1,23 @@
+aris_front:
+    resource: "@ArisFrontBundle/Resources/config/routing.yml"
+    prefix:   /
+
+
+    
+aris_admin:
+    resource: "@ArisAdminBundle/Resources/config/routing.yml"
+    prefix:   /admin
+
+login:
+    pattern:   /login
+    defaults:  { _controller: ArisMainBundle:Security:login }
+    
+login_check:
+    pattern:   /login_check
+    
+test_security:
+    pattern: /admin
+    defaults: {_controller: ArisAdminBundle:Galeria:index }
+    
+logout:
+    path:     /logout

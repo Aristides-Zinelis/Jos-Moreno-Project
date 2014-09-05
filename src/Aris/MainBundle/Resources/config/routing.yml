@@ -1,0 +1,5 @@
+aris_main_homepage:
+    path:     /hello/{name}
+    defaults: { _controller: ArisMainBundle:Default:index }
+
+

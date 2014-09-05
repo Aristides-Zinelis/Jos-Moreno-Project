@@ -1,0 +1,32 @@
+{% extends 'ArisAdminBundle::layout.html.twig' %}
+
+{% block body -%}
+    <h1>Curriculo</h1>
+  
+   
+ {% if entity == null %}
+    
+            <a class="btn btn-primary" href="{{ path('curriculo_new') }}">
+               Añadir curriculo
+            </a>
+               
+               <br/><br/>
+       
+  {% else %}
+        <a class="btn btn-primary"  href="{{ path('curriculo_edit', {'id':1}) }}">
+               Editar curriculo
+            </a>
+        <div class="row">
+            <h2>{{ entity.title }} </h2>
+    </div>
+      <div class="row">
+       <img class="thumbnail" src="{{ asset('uploads/cv/') }}{{ entity.image }} " />
+    </div>
+    <div class="row">
+     <p>  {{ entity.texto }} </p>
+    </div>
+     
+          
+       
+      {% endif  %}
+    {% endblock %}

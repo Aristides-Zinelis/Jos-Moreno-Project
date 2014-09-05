@@ -1,0 +1,26 @@
+images:
+    path:     /{id}
+    defaults: { _controller: "ArisAdminBundle:Images:index" }
+
+images_new:
+    path:     /{id}/new
+    defaults: { _controller: "ArisAdminBundle:Images:new" }
+
+images_create:
+    path:     /{id}/create
+    defaults: { _controller: "ArisAdminBundle:Images:create" }
+    requirements: { _method: post }
+
+images_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "ArisAdminBundle:Images:edit" }
+
+images_update:
+    path:     /{id}/update
+    defaults: { _controller: "ArisAdminBundle:Images:update" }
+    requirements: { _method: post|put }
+
+images_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "ArisAdminBundle:Images:delete" }
+    

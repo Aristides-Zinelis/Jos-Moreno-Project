@@ -1,0 +1,13 @@
+{% extends 'ArisAdminBundle::layout.html.twig' %}
+{% block body -%}
+     <div class="col-xs-6 col-md-offset-3">  
+    <h1>Editar imagen</h1>
+ <a class='btn btn-info' href="{{ path('images', {'id': entity.galeria.id}) }}">
+            Atrás
+        </a>
+            <br/><br/>
+      <img width='150' class='thumbnail' src='{{ asset('uploads/images/') }}{{ entity.image }}' />
+    {{ form(edit_form) }}
+
+     </div> 
+{% endblock %}

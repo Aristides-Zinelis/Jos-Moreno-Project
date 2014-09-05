@@ -1,0 +1,139 @@
+<?php
+
+namespace Aris\MainBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Secuencia
+ *
+ * @ORM\Table(name="secuencia")
+ * @ORM\Entity(repositoryClass="Aris\MainBundle\Entity\SecuenciaRepository")
+ */
+class Secuencia
+{
+      public function __construct()
+    {
+        $this->imagen = new ArrayCollection();
+    }
+    
+    
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="AUTO")
+     */
+    private $id;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="name", type="string", length=255)
+     */
+    private $name;
+    
+    
+     /**
+     * @see Entity/Galeria
+     * @ORM\ManyToOne(targetEntity="Galeria", inversedBy="secuencia")
+     * @ORM\JoinColumn(name="galeria_id", referencedColumnName="id")
+     */
+    protected $galeria = null;
+    
+     /**
+     * @ORM\OneToMany(targetEntity="Images", mappedBy="secuencia")
+     */
+    protected $images;
+
+
+    /**
+     * Get id
+     *
+     * @return integer 
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * Set name
+     *
+     * @param string $name
+     * @return Secuencia
+     */
+    public function setName($name)
+    {
+        $this->name = $name;
+
+        return $this;
+    }
+
+    /**
+     * Get name
+     *
+     * @return string 
+     */
+    public function getName()
+    {
+        return $this->name;
+    }
+
+    /**
+     * Set galeria
+     *
+     * @param \Aris\MainBundle\Entity\Galeria $galeria
+     * @return Secuencia
+     */
+    public function setGaleria(\Aris\MainBundle\Entity\Galeria $galeria = null)
+    {
+        $this->galeria = $galeria;
+
+        return $this;
+    }
+
+    /**
+     * Get galeria
+     *
+     * @return \Aris\MainBundle\Entity\Galeria 
+     */
+    public function getGaleria()
+    {
+        return $this->galeria;
+    }
+
+    /**
+     * Add images
+     *
+     * @param \Aris\MainBundle\Entity\Images $images
+     * @return Secuencia
+     */
+    public function addImage(\Aris\MainBundle\Entity\Images $images)
+    {
+        $this->images[] = $images;
+
+        return $this;
+    }
+
+    /**
+     * Remove images
+     *
+     * @param \Aris\MainBundle\Entity\Images $images
+     */
+    public function removeImage(\Aris\MainBundle\Entity\Images $images)
+    {
+        $this->images->removeElement($images);
+    }
+
+    /**
+     * Get images
+     *
+     * @return \Doctrine\Common\Collections\Collection 
+     */
+    public function getImages()
+    {
+        return $this->images;
+    }
+}

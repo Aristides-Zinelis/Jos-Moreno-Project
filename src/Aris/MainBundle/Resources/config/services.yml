@@ -1,0 +1,7 @@
+parameters:
+#    aris_main.example.class: Aris\MainBundle\Example
+
+services:
+#    aris_main.example:
+#        class: %aris_main.example.class%
+#        arguments: [@service_id, "plain_value", %parameter%]

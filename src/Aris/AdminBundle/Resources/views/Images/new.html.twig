@@ -1,0 +1,42 @@
+{% extends 'ArisAdminBundle::layout.html.twig' %}
+{% block styles %}
+a.btn.btn-primary.btn-small{
+position:relative;
+top: 100px;
+background-color:#f0ad4e;
+border-color: #f0ad4e;
+
+
+}
+{% endblock %}
+{% block body -%}
+    <h1>Añadir Imágenes</h1>
+    
+     <a class="btn btn-info" href="{{ path('images', {'id': app.request.get('id')}) }}">
+            Atrás
+    </a>
+
+    {{ form(form) }}
+    
+{% endblock %}
+{% block scripts %}
+
+    var imgCount = '{{ form.image|length }}';
+
+    jQuery(document).ready(function() {
+        
+            var imgList = jQuery('#images_image');
+           
+            var newWidget = imgList.attr('data-prototype');
+           
+            newWidget = newWidget.replace(/__name__/g, imgCount);
+            imgCount++;
+           
+            var newLi = newWidget;
+            
+            imgList.before(newLi);
+            return false;
+    });
+    
+    
+{% endblock %}

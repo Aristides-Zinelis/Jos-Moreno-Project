@@ -1,0 +1,42 @@
+{% extends 'ArisAdminBundle::layout.html.twig' %}
+
+{% block body -%}
+    <h1>Imagenes de secuencia {{entities.name}}</h1>
+  <a class="btn btn-info" href="{{ path('galeria') }}">
+            Atras
+        </a>
+    <a class="btn btn-primary" href="{{ path('images_new', {'id': app.request.get('id')}) }}">
+                Añadir imágenes
+            </a>
+    <table class="table">
+        <thead>
+            <tr>
+             
+                <th>Nombre</th>
+                <th>Secuencia</th>
+                <th>Order</th>
+                <th>Imagen</th>
+                <th></th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for entity in entities.images %}
+            <tr>
+                <td>{{ entity.nombre }}</td>
+                <td>{{ entity.secuencia }}</td>
+                <td>{{ entity.sort }}</td>
+                <td><img width='150' class="thumbnail" src="{{ asset('uploads/images/') }}{{ entity.image }}"/></td>
+                <td>
+                        <a href="{{ path('images_edit', { 'id': entity.id}) }}">{{icon('edit')}}</a>
+                </td>
+                <td>
+                      <a onClick="return confirm('Vas a eliminar la galeria {{ entity.nombre }}.\n ¿Estas seguro?')" href="{{ path('images_delete', { 'id': entity.id }) }}">{{icon('trash')}}</a>
+                </td>     
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+       
+    {% endblock %}

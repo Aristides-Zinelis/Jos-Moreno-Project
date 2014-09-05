@@ -1,0 +1,14 @@
+{% extends 'ArisAdminBundle::layout.html.twig' %}
+
+{% block body -%}
+    <h1>Crear curriculo</h1>
+    <br/><br/>
+    
+     <a class="btn btn-info" href="{{ path('curriculo') }}">
+           Atras
+        </a>
+
+    {{ form(form) }}
+
+       
+{% endblock %}

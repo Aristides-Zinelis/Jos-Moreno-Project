@@ -1,0 +1,15 @@
+{% extends 'ArisAdminBundle::layout.html.twig' %}
+
+{% block body -%}
+    <h1>curriculo edit</h1>
+    <a class="btn btn-info" href="{{ path('curriculo') }}">
+            Atras
+        </a>
+            <br/><br/>
+            <div class="row">
+            <img width="150" class="thumbnail" src="{{ asset('uploads/cv/') }}{{ entity.image }}"/>
+            </div>
+    {{ form(edit_form) }}
+
+       
+{% endblock %}

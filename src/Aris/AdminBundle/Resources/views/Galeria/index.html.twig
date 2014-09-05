@@ -1,0 +1,46 @@
+{% extends 'ArisAdminBundle::layout.html.twig' %}
+
+
+{% block body -%}
+    <h1>Galerias</h1>
+    
+      <a class="btn btn-primary" href="{{ path('galeria_new') }}">
+                Crear nueva galeria
+            </a>
+     <!-- Page Heading --> 
+     <hr/>
+
+     <div class="row">
+     {% for item in pagination %}
+    
+        <!-- /.row -->
+        
+        <!-- Projects Row -->
+     
+       
+            <div class="col-xs-6 col-md-3 ">
+                <a href="{{ path('images', { 'id': item.id }) }}">
+                    <img class="img thumbnail img-responsive" src="{{ asset('uploads/galerias/') }}{{ item.image }}" alt="">
+                   
+                </a>
+                    <div><a href="{{ path('images', { 'id': item.id }) }}">{{ item.name }}  </a>|  <a href="{{ path('galeria_edit', { 'id': item.id }) }}">{{ icon('edit') }}</a> | <a onClick="return confirm('Vas a eliminar la galeria {{ item.name }}.\n ¿Estas seguro?')" href="{{ path('galeria_delete', { 'id': item.id }) }}">{{ icon('trash') }}</a> </div>
+            </div>
+        
+          {% if loop.index is divisibleby(4) %}
+           </div>
+           <div class="clearfix visible-xs"></div>
+           <hr/>
+            <div class="row">
+        {% endif %}
+        {% endfor %}
+        </div>
+        <div class="navigation">
+    {{ knp_pagination_render(pagination) }}
+
+     </div>
+
+
+       
+          
+       
+    {% endblock %}

@@ -1,0 +1,57 @@
+{% extends 'ArisFrontBundle::layout.html.twig' %}
+{% block title %}Jose {% endblock %}
+{% block styles %} 
+    <link href="{{ asset('css/style.css')}}" rel="stylesheet" />
+    <link href="{{ asset('css/font-awesome.min.css')}}" rel="stylesheet" />
+    <link rel="stylesheet" href="{{ asset('css/normalize.css')}}" type="text/css" media="screen">
+    <link href="{{ asset('css/custom.css')}}" rel="stylesheet" />
+     <link rel="stylesheet" href="{{ asset('css/touchTouch.css')}}" type="text/css" media="screen">
+      <link rel="stylesheet" href="{{ asset('css/curriculo.css')}}" type="text/css" media="screen">
+   <style type="text/css">
+     
+
+    </style>
+{% endblock %}
+{% block scripts %}
+
+{% endblock %}
+{% block content %} 
+
+    <div class="container">
+        <div class="summary">
+            <img class="summary-image  img-responsive pull-right thumbnail" alt="Bootstrap template" src="{{ asset('uploads/cv/')}}{{cv.image}}">
+            <h2 class="summary-heading">
+               {{cv.title}}
+            </h2>
+            <p class="lead">
+                {{cv.texto}}
+            </p>
+        </div>
+    </div>
+
+
+
+{% endblock %} 
+{% block finalScripts %}
+     <!-- Easing core JavaScript -->
+    <script language="javascript" src="{{ asset('js/jquery.easing.1.3.js')}}"></script>
+	<!-- Bootstrap core JavaScript -->
+    <script language="javascript" src="{{ asset('js/bootstrap.js')}}"></script>
+    
+    <script language="javascript" src="{{ asset('js/touchTouch.jquery.js')}}" ></script>
+    <script language="javascript" src="{{ asset('js/waypoints.min.js')}}"></script>
+    <script type="text/javascript" src="{{ asset('js/jquery.mixitup.min.js')}}"></script>
+            
+              <script type="text/javascript">
+                  
+                   jQuery('#grid').mixitup({
+		targetSelector: '.mix',
+		});
+                
+               	jQuery('.magnifier').touchTouch();
+		
+  		  	
+	
+              </script>
+{% endblock %} 
+

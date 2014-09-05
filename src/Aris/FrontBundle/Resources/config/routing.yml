@@ -1,0 +1,21 @@
+aris_front_homepage:
+    path:     /
+    defaults: { _controller: ArisFrontBundle:Default:index }
+
+aris_front_galeria:
+    path:     /galerias
+    defaults: { _controller: ArisFrontBundle:Default:galerias }
+    
+aris_front_galerias_galeria:
+    path:     /galeria/{name}
+    defaults: { _controller: ArisFrontBundle:Default:galeria }
+
+
+aris_front_curriculo:
+    path:     /curriculo
+    defaults: { _controller: ArisFrontBundle:Default:curiculo }
+    
+aris_front_contacto:
+    path:     /contacto
+    defaults: { _controller: ArisFrontBundle:Default:contacto }
+    requirements: { _method: post|get }

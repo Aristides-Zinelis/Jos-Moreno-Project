@@ -1,0 +1,16 @@
+aris_admin_homepage:
+    path:     /hello
+    defaults: { _controller: ArisAdminBundle:Default:index }
+    
+ArisAdminBundle_galeria:
+    resource: "@ArisAdminBundle/Resources/config/routing/galeria.yml"
+    prefix:   /galeria
+    
+
+ArisMainBundle_images:
+        resource: "@ArisAdminBundle/Resources/config/routing/images.yml"
+        prefix:   /images
+        
+ArisAdminBundle_curriculo:
+        resource: "@ArisAdminBundle/Resources/config/routing/curriculo.yml"
+        prefix:   /curriculo

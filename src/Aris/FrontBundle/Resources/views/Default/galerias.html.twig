@@ -1,0 +1,78 @@
+{% extends 'ArisFrontBundle::layout.html.twig' %}
+{% block title %}Jose {% endblock %}
+{% block styles %} 
+    <link href="{{ asset('css/style.css')}}" rel="stylesheet" />
+    <link href="{{ asset('css/font-awesome.min.css')}}" rel="stylesheet" />
+    <link href="{{ asset('css/settings.css')}}" rel="stylesheet" />
+    <link rel="stylesheet" href="{{ asset('css/normalize.css')}}" type="text/css" media="screen">
+    <link href="{{ asset('css/custom.css')}}" rel="stylesheet" />
+    <link href="{{ asset('css/lightbox.css')}}" rel="stylesheet" />
+     <link href="{{ asset('css/isotope.css')}}" rel="stylesheet" />
+     <link rel="stylesheet" href="{{ asset('css/touchTouch.css')}}" type="text/css" media="screen">
+     <link rel="stylesheet" href="{{ asset('css/galerias.css')}}" type="text/css" media="screen">
+      <link rel="stylesheet" href="{{ asset('css/animate.css')}}" type="text/css" media="screen">
+   
+
+   
+{% endblock %}
+{% block scripts %}
+  
+{% endblock %}
+{% block content %} 
+   
+    
+    
+   
+   	<div class="container" style="z-index: 5; padding-top: 14%;">
+            <div class="row">
+               <!--Start heading-->
+               <div class="col-md-offset-2 col-md-8">
+                    <div class="section-header">
+                        <h2 class="smt"><span>Galerias</span></h2>
+                    </div>
+                </div>
+                <!--End heading-->
+                 <div class="clear"></div>
+               
+            
+            <div id="grid" >
+               
+                 {% for galeria in galerias %} 
+                <div class="col-md-2 col-sm-4 col-xs-6" style="display: inline-block;  opacity: 1; z-index: 8">
+                     <a title="{{galeria.name}}" href="{{ path('aris_front_galerias_galeria', {'name':galeria.name}) }}">
+                       
+                            <h6>{{galeria.name}}</h6>
+                           <div class="image-wrapper">
+                            <img alt="work" class="img-responsive thumbnail" src="{{asset('uploads/galerias/')}}{{galeria.image}}">
+                           
+                       <div class="image-overlay">
+                           <span><i class="fa fa-eye"></i></span>
+                        </div>
+                      </div>
+                     </a>
+                </div> <!--work item-->
+                 
+            {% endfor%}  
+              </div> <!--/ grid-->
+           </div>  <!-- /row-->
+        </div>     
+              
+  
+{% endblock %} 
+{% block finalScripts %}
+     <!-- Easing core JavaScript -->
+    <script language="javascript" src="{{ asset('js/jquery.easing.1.3.js')}}"></script>
+	<!-- Bootstrap core JavaScript -->
+    <script language="javascript" src="{{ asset('js/bootstrap.js')}}"></script>
+    <!-- Master slider core JavaScript-->
+   
+    
+    <script language="javascript" src="{{ asset('js/touchTouch.jquery.js')}}" ></script>
+   
+      <script language="javascript" src="{{ asset('js/lightbox.min.js')}}"></script>
+      <script language="javascript" src="{{ asset('js/waypoints.min.js')}}"></script>
+      <script type="text/javascript">
+          $('#grid div').addClass('animated bounceInLeft ');
+
+      </script>
+{% endblock %} 

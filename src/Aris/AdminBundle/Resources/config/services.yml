@@ -1,0 +1,13 @@
+services:
+    aris_main.menu_builder:
+        class: Aris\AdminBundle\Menu\MenuBuilder
+        arguments: ["@knp_menu.factory", "@doctrine"]
+
+    aris_main.menu.main:
+        class: Knp\Menu\MenuItem # the service definition requires setting the class
+        factory_service: aris_main.menu_builder
+        factory_method: createMainMenu
+        arguments: ["@request"]
+        scope: request # needed as we have the request as a dependency here
+        tags:
+            - { name: knp_menu.menu, alias: main } # The alias is what is used to retrieve the menu
